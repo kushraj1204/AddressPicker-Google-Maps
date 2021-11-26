@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input class="form-control"
+                                       name="address" type="address"
+                                       value=""
+                                       id="address">
+
+                                <input type="hidden" id="lat" name="lat" value="27"
+                                       placeholder="Latitude">
+
+                                <input type="hidden" id="lng" name="lng" value="81"
+                                       placeholder="Longitude">
+                                <div id="map" style="height: 400px;width: 100%;"></div>
+                            </div>
+               
+
+</body>
+        <script src="./addressPicker.js"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=********************************&libraries=places&callback=gMapInit"></script>
+
+    <script>
+        function gMapInit() {
+            new addressPicker({
+                'lat':27,
+                'lng':81,
+                'mapid': 'map',
+                'latid': 'lat',
+                'lngid': 'lng',
+                'addressid': 'address',
+                'allowMarkerDrag': true
+            });
+        }
+
+    </script>
+
+</html>
+
